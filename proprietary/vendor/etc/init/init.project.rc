@@ -1,0 +1,10 @@
+on post-fs-data
+    # add for fpsensor Fingerprint
+    write /dev/kmsg "xianglin finger"
+    chmod 660 /dev/fpsensor
+    chown system system /dev/fpsensor
+
+    mkdir /data/fpsensor
+    chown system system /data/fpsensor
+    chmod 660 /data/fpsensor/socket
+    chown system system /data/fpsensor/socket
